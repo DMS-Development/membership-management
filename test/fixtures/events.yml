@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  date: 2023-11-06
+  time: 2023-11-06 13:56:20
+  location: MyString
+  max_participants: 1
+
+two:
+  name: MyString
+  description: MyText
+  date: 2023-11-06
+  time: 2023-11-06 13:56:20
+  location: MyString
+  max_participants: 1

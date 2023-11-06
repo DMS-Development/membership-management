@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2023-11-06 13:45:32
+  end_date: 2023-11-06 13:45:32
+  is_active: false
+  user: one
+  membership_type: one
+
+two:
+  start_date: 2023-11-06 13:45:32
+  end_date: 2023-11-06 13:45:32
+  is_active: false
+  user: two
+  membership_type: two
