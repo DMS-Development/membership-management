@@ -9,5 +9,5 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
-  validates :phone_number, { with: /[0-9]/ }, length: { is: 10 }, allow_blank: false
+  validates :phone_number, format: { with: /\A\d{10}\z/  }, length: { is: 10 }, allow_blank: false
 end
