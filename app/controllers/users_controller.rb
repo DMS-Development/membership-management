@@ -6,9 +6,6 @@ class UsersController < ApplicationController
     render json: @users.as_json(include: [:addresses, :membership])
   end
 
-  def new
-  end
-
   def create
     @user = User.new(user_params)
     if @user.save
@@ -41,6 +38,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :phone_number)
+    params.require(:user).permit(:first_name, :last_name, :email, :phone_number, address_attributes: [:street, :street_two, :city, :state, :zip_code])
     end
 end

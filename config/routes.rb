@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   end
 
   resources :events do
-    resources :attendances, only: [:create, :destroy]
+    resources :attendances, only: [:index, :create, :destroy]
   end
 
   resources :memberships

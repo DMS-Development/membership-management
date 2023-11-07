@@ -4,8 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :attendances
+  has_many :events, through: :attendances
   has_many :addresses
   has_one :membership
+  accepts_nested_attributes_for :addresses, allow_destroy: true
 
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
