@@ -1,29 +1,6 @@
 Rails.application.routes.draw do
-  get 'membership_types/index'
-  get 'membership_types/new'
-  get 'membership_types/create'
-  get 'membership_types/edit'
-  get 'membership_types/update'
-  get 'membership_types/destroy'
-  get 'memberships/new'
-  get 'memberships/create'
-  get 'memberships/edit'
-  get 'memberships/update'
-  get 'memberships/show'
-  get 'events/idex'
-  get 'events/new'
-  get 'events/create'
-  get 'events/edit'
-  get 'events/update'
-  get 'events/show'
-  get 'events/destroy'
-  get 'users/index'
-  get 'users/new'
-  get 'users/create'
-  get 'users/edit'
-  get 'users/update'
-  get 'users/show'
-  devise_for :users
+
+  devise_for :users, defaults: { format: :json }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -33,16 +10,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :users do
-    resources :addresses
-  end
-
+  resources :membership_types, except: :destroy
+  resources :memberships, except: [:index, :destroy]
   resources :events do
     resources :attendances, only: [:index, :create, :destroy]
   end
 
-  resources :memberships
-
-  resources :membership_types, except: [:destroy]
+  resources :users do
+    resources :addresses
+  end
 
 end

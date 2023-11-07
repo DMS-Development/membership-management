@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module MembershipManagement
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -23,5 +26,10 @@ module MembershipManagement
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use Warden::Manager do |manager|
+      manager.default_strategies(:scope => :user).unshift :jwt
+    end
   end
 end
