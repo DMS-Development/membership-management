@@ -1,7 +1,8 @@
 # Membership Management System for Nonprofit Organizations
 
 ## Description
-This application is a full-stack solution designed to streamline membership management for nonprofit organizations. It provides a modern, user-friendly interface for both members and organization owners. Key features include account creation, membership info management, Stripe integration for payments, automated billing, email campaigns, and a community calendar.
+This application is a full-stack solution designed to streamline membership management for nonprofit organizations. It provides a modern, user-friendly interface for both members and organization owners. Key features include account creation, membership info management, Stripe integration for payments, automated billing, email campaigns, and a community calendar.<br>
+***Live demo coming soon!***
 
 ## Key Features
 - **Member Account Creation and Management**
